@@ -1,0 +1,77 @@
+Trea, hãy giúp tôi tạo một dự án lập trình bằng TypeScript dành cho học sinh trung học (lớp 9 đến lớp 12) để xây dựng một ứng dụng web đơn giản. Ứng dụng này cho phép người dùng nhập địa chỉ ví EVM trên mạng Base (ví dụ: 0x123...) và kiểm tra xem ví đó có sở hữu NFT từ hợp đồng BaseCamp (địa chỉ hợp đồng: 0x26ed98bf771f9fabc226e64cf34e9c4b6cce90d0, chuẩn ERC1155) hay không. Dự án cần sử dụng một subgraph của The Graph (nếu có) hoặc các phương pháp thay thế như thư viện ethers.js để truy vấn dữ liệu blockchain. Dự án phải dễ hiểu, phù hợp với học sinh trung học, và đáp ứng các yêu cầu sau:
+Mục tiêu dự án:
+Người dùng nhập địa chỉ ví EVM vào một giao diện web đơn giản.
+
+Ứng dụng kiểm tra và hiển thị kết quả: "Ví này sở hữu NFT từ BaseCamp" (kèm số lượng hoặc ID của NFT nếu có) hoặc "Ví này không sở hữu NFT từ BaseCamp".
+
+Giao diện web cần thân thiện, dễ sử dụng (ví dụ: một ô nhập liệu, một nút "Kiểm tra", và khu vực hiển thị kết quả).
+Yêu cầu kỹ thuật:
+Sử dụng TypeScript để viết mã nguồn.
+
+Nếu có sẵn subgraph của The Graph cho hợp đồng BaseCamp (0x26ed98bf771f9fabc226e64cf34e9c4b6cce90d0), sử dụng Apollo Client để truy vấn dữ liệu NFT ERC1155. Nếu không có subgraph, sử dụng ethers.js để gọi hàm balanceOf hoặc balanceOfBatch của hợp đồng ERC1155 để kiểm tra số dư NFT.
+
+Dự án chạy trên môi trường Node.js và sử dụng framework như React hoặc Vite để tạo giao diện web.
+
+Kết nối với mạng Base thông qua một nhà cung cấp RPC (ví dụ: Alchemy hoặc Infura, hướng dẫn cách lấy RPC URL miễn phí).
+Hướng dẫn chi tiết cho học sinh:
+Cấu trúc dự án: Cung cấp hướng dẫn từng bước để thiết lập môi trường lập trình:
+Cài đặt Node.js, TypeScript, và các thư viện cần thiết (như ethers.js, Apollo Client nếu dùng The Graph).
+
+Tạo dự án React/Vite với TypeScript.
+Mã nguồn: Cung cấp mã TypeScript hoàn chỉnh, bao gồm:
+Giao diện web đơn giản (HTML, CSS, TypeScript/React).
+
+Hàm kiểm tra địa chỉ ví EVM hợp lệ (dùng ethers.js để xác thực định dạng địa chỉ).
+
+Hàm truy vấn dữ liệu NFT:
+Nếu dùng The Graph: Truy vấn GraphQL để lấy danh sách NFT ERC1155 của ví.
+
+Nếu dùng ethers.js: Gọi hàm balanceOf hoặc balanceOfBatch của hợp đồng ERC1155.
+Xử lý và hiển thị kết quả trên giao diện.
+Giải thích dễ hiểu:
+The Graph: Giải thích The Graph là gì (một công cụ lập chỉ mục dữ liệu blockchain, như "Google của blockchain").
+
+NFT ERC1155: Giải thích ERC1155 là chuẩn NFT cho phép một hợp đồng chứa nhiều loại token (khác với ERC721), với ví dụ như "một hợp đồng có thể chứa cả skin game và vật phẩm".
+
+Mạng Base: Giới thiệu ngắn gọn Base là blockchain layer-2 của Ethereum, rẻ và nhanh hơn Ethereum mainnet.
+
+GraphQL (nếu dùng): Giải thích cách viết truy vấn GraphQL đơn giản để lấy dữ liệu NFT (ví dụ: tìm tokenID hoặc số dư của ví).
+
+ethers.js (nếu dùng): Giải thích cách gọi hàm hợp đồng để kiểm tra số dư NFT.
+Ví dụ cụ thể: Đưa ra ví dụ truy vấn GraphQL hoặc lệnh gọi ethers.js, cùng kết quả mẫu (ví dụ: "Ví sở hữu 2 NFT với tokenID 1 và 3").
+Yêu cầu giáo dục:
+Sử dụng ngôn ngữ đơn giản, tránh thuật ngữ phức tạp. Khi dùng thuật ngữ như "EVM", "ERC1155", "subgraph", "RPC", hãy giải thích bằng ví dụ thực tế (ví dụ: "EVM là bộ máy chạy các hợp đồng thông minh, như một siêu máy tính cho blockchain").
+
+Thêm chú thích (comments) trong mã nguồn để giải thích từng đoạn code.
+
+Bao gồm phần "Mở rộng dự án" với gợi ý để học sinh phát triển thêm, ví dụ:
+Hiển thị chi tiết NFT (tokenID, số lượng, hoặc hình ảnh nếu có).
+
+Thêm hỗ trợ kiểm tra nhiều hợp đồng NFT khác.
+
+Cải thiện giao diện với CSS (thêm màu sắc, hiệu ứng).
+Khuyến khích học sinh khám phá blockchain bằng cách thử nhập ví của chính họ (nếu có) hoặc ví công khai.
+Định dạng đầu ra:
+Cung cấp hướng dẫn dưới dạng tài liệu rõ ràng, chia thành các phần:
+Giới thiệu dự án: Mô tả mục tiêu và ý nghĩa của việc kiểm tra NFT.
+
+Chuẩn bị môi trường: Hướng dẫn cài đặt công cụ (Node.js, TypeScript, Vite/React, ethers.js, Apollo Client).
+
+Hướng dẫn code: Mã nguồn TypeScript kèm chú thích.
+
+Cách chạy dự án: Lệnh terminal để khởi động ứng dụng.
+
+Giải thích kỹ thuật: Thông tin về The Graph, ERC1155, mạng Base, và cách truy vấn dữ liệu.
+
+Gợi ý mở rộng: Ý tưởng nâng cấp dự án.
+Thêm sơ đồ hoặc hình ảnh minh họa (nếu có) để giải thích luồng hoạt động (ví dụ: từ nhập ví -> truy vấn -> hiển thị kết quả).
+Giả định:
+Học sinh có kiến thức cơ bản về HTML, CSS, JavaScript, nhưng chưa quen với TypeScript, blockchain, hoặc NFT.
+
+Học sinh có thể làm theo hướng dẫn cài đặt phần mềm và chạy lệnh terminal cơ bản.
+
+Nếu cần API key (cho The Graph, Alchemy, hoặc Infura), hướng dẫn cách đăng ký miễn phí trên các nền tảng này (ví dụ: The Graph Studio, Alchemy).
+
+Nếu không tìm thấy subgraph cho BaseCamp, giả định một subgraph ví dụ hoặc sử dụng ethers.js để truy vấn trực tiếp hợp đồng.
+Hãy đảm bảo dự án vui nhộn, khuyến khích học sinh khám phá công nghệ blockchain, và phù hợp với trình độ trung học. Cảm ơn Trea!
+
